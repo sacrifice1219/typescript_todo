@@ -47,11 +47,11 @@ const TodoList = () => {
                 {/* todo input from component goes here */}
                 <TodoForm setTodos={setTodos}/>
             </div>
-
+            <div className="todos">
             {todos.map((todo) => (
                 <div className="items" key={todo.id}>
                     {editingTodoId == todo.id ? (
-                        <div className="editedText">
+                        <div className="editText">
                             <input type="text" value={editedTodoText} onChange={(e) => setEditedTodoText(e.target.value)} autoFocus={true} />
                             <button onClick={() => handleEditSave(todo.id)}>
                                 <FaCheck />
@@ -75,6 +75,7 @@ const TodoList = () => {
                       </button>
                 </div>
             ))}
+            </div>
         </div>
     )
 }
